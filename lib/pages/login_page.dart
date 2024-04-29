@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kinetik/components/google_auth_button.dart';
 import 'package:kinetik/components/normal_input_container.dart';
 import 'package:kinetik/components/normal_auth_button.dart';
+import 'package:kinetik/pages/registration_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -113,14 +114,21 @@ class _LoginPageState extends State<LoginPage> {
                   height: 15,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (_) => const RegistrationPage(),
+                      ),
+                    );
+                  },
                   child: Text(
                     "Don’t have an account? Click here",
                     style: GoogleFonts.openSans(
-                        decoration: TextDecoration.underline,
-                        fontSize: 14,
-                        color: Color(0xFF11487A),
-                        fontWeight: FontWeight.w500),
+                      decoration: TextDecoration.underline,
+                      fontSize: 14,
+                      color: Color(0xFF11487A),
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 )
               ],
