@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kinetik/components/google_auth_button.dart';
+import 'package:kinetik/components/normal_input_container.dart';
 import 'package:kinetik/components/normal_auth_button.dart';
-import 'package:kinetik/pages/registration_page.dart';
+import 'login_page.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegistrationPage extends StatefulWidget {
+  const RegistrationPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegistrationPage> createState() => _RegistrationPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegistrationPageState extends State<RegistrationPage> {
   bool isVisible = true;
-  String loginEmail = "";
-  String loginPassword = "";
+  String userEmail = "";
+  String username = "";
+  String userPassword = "";
   void changeVisibility() {
     setState(() {
       isVisible = !isVisible;
@@ -29,8 +31,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Container(
             width: double.infinity,
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 60, vertical: 30.0),
+              padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 20),
               child: Column(
                 children: [
                   Padding(
@@ -45,9 +46,44 @@ class _LoginPageState extends State<LoginPage> {
                     height: 40,
                   ),
                   Text(
-                    "Login",
+                    "Create An Account",
                     style: GoogleFonts.openSans(
                         color: Colors.white, fontSize: 20.0),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Container(
+                    ///input for email
+                    width: double.infinity,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(146, 153, 166, 0.8),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 5,
+                        horizontal: 20,
+                      ),
+                      child: TextField(
+                        keyboardType: TextInputType.emailAddress,
+                        onChanged: (String name) {
+                          username = name;
+                        },
+                        style: GoogleFonts.openSans(
+                          fontSize: 15.0,
+                          color: Colors.black,
+                        ),
+                        textAlign: TextAlign.start,
+                        decoration: InputDecoration(
+                            hintText: "Name",
+                            border: InputBorder.none,
+                            hintStyle: GoogleFonts.openSans(
+                              color: Colors.white,
+                            )),
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: 40,
@@ -69,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                           fontSize: 15.0,
                           color: Colors.black,
                         ),
-                        onChanged: (String email) => {loginEmail = email},
+                        onChanged: (String email) => {userEmail = email},
                         textAlign: TextAlign.start,
                         decoration: InputDecoration(
                             hintText: "Email",
@@ -99,8 +135,10 @@ class _LoginPageState extends State<LoginPage> {
                           fontSize: 15.0,
                           color: Colors.black,
                         ),
-                        onChanged: (String password) =>
-                            {loginPassword = password},
+                        onChanged: (String password) {
+                          print(password);
+                          userPassword = password;
+                        },
                         textAlign: TextAlign.start,
                         decoration: InputDecoration(
                             suffixIcon: GestureDetector(
@@ -124,12 +162,13 @@ class _LoginPageState extends State<LoginPage> {
                     height: 40,
                   ),
                   NormalAuthButton(
-                      name: "Sign In",
-                      onPressed: () {
-                        print(loginEmail + " " + loginPassword);
-                      }),
+                    name: "Register",
+                    onPressed: () {
+                      print(username + " " + userEmail + " " + userPassword);
+                    },
+                  ),
                   SizedBox(
-                    height: 40,
+                    height: 20,
                   ),
                   Divider(
                     color: Colors.white,
@@ -137,33 +176,29 @@ class _LoginPageState extends State<LoginPage> {
                     thickness: 1,
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   GoogleAuthButton(
-                    buttonName: "Login With Google",
+                    buttonName: "Continue With Google",
                   ),
                   SizedBox(
                     height: 15,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(
-                            builder: (_) => const RegistrationPage(),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        "Don’t have an account? Click here",
-                        style: GoogleFonts.openSans(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (_) => const LoginPage(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "Already have an account? Click here",
+                      style: GoogleFonts.openSans(
                           decoration: TextDecoration.underline,
                           fontSize: 14,
                           color: Color(0xFF11487A),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
+                          fontWeight: FontWeight.w500),
                     ),
                   )
                 ],
