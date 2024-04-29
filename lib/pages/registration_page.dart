@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kinetik/components/google_auth_button.dart';
 import 'package:kinetik/components/normal_input_container.dart';
 import 'package:kinetik/components/normal_auth_button.dart';
+import 'login_page.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});
@@ -13,6 +14,9 @@ class RegistrationPage extends StatefulWidget {
 
 class _RegistrationPageState extends State<RegistrationPage> {
   bool isVisible = true;
+  String userEmail = "";
+  String username = "";
+  String userPassword = "";
   void changeVisibility() {
     setState(() {
       isVisible = !isVisible;
@@ -49,11 +53,69 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   SizedBox(
                     height: 40,
                   ),
-                  NormalInputContainer(hintText: "Name"),
+                  Container(
+                    ///input for email
+                    width: double.infinity,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(146, 153, 166, 0.8),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 5,
+                        horizontal: 20,
+                      ),
+                      child: TextField(
+                        keyboardType: TextInputType.emailAddress,
+                        onChanged: (String name) {
+                          username = name;
+                        },
+                        style: GoogleFonts.openSans(
+                          fontSize: 15.0,
+                          color: Colors.black,
+                        ),
+                        textAlign: TextAlign.start,
+                        decoration: InputDecoration(
+                            hintText: "Name",
+                            border: InputBorder.none,
+                            hintStyle: GoogleFonts.openSans(
+                              color: Colors.white,
+                            )),
+                      ),
+                    ),
+                  ),
                   SizedBox(
                     height: 40,
                   ),
-                  NormalInputContainer(hintText: "Email"),
+                  Container(
+                    ///input for email
+                    width: double.infinity,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(146, 153, 166, 0.8),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 20),
+                      child: TextField(
+                        keyboardType: TextInputType.emailAddress,
+                        style: GoogleFonts.openSans(
+                          fontSize: 15.0,
+                          color: Colors.black,
+                        ),
+                        onChanged: (String email) => {userEmail = email},
+                        textAlign: TextAlign.start,
+                        decoration: InputDecoration(
+                            hintText: "Email",
+                            border: InputBorder.none,
+                            hintStyle: GoogleFonts.openSans(
+                              color: Colors.white,
+                            )),
+                      ),
+                    ),
+                  ),
                   SizedBox(
                     height: 40,
                   ),
@@ -73,6 +135,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           fontSize: 15.0,
                           color: Colors.black,
                         ),
+                        onChanged: (String password) {
+                          print(password);
+                          userPassword = password;
+                        },
                         textAlign: TextAlign.start,
                         decoration: InputDecoration(
                             suffixIcon: GestureDetector(
@@ -97,6 +163,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   NormalAuthButton(
                     name: "Register",
+                    onPressed: () {
+                      print(username + " " + userEmail + " " + userPassword);
+                    },
                   ),
                   SizedBox(
                     height: 20,
@@ -117,7 +186,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pop(context);
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (_) => const LoginPage(),
+                        ),
+                      );
                     },
                     child: Text(
                       "Already have an account? Click here",
