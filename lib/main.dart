@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kinetik/pages/categories.dart';
 import 'pages/home_page.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class KineTikApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: Categories(),
     );
   }
 }
