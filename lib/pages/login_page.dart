@@ -4,6 +4,8 @@ import 'package:kinetik/components/google_auth_button.dart';
 import 'package:kinetik/components/normal_auth_button.dart';
 import 'package:kinetik/pages/registration_page.dart';
 
+import 'home_page.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -126,6 +128,11 @@ class _LoginPageState extends State<LoginPage> {
                   NormalAuthButton(
                       name: "Sign In",
                       onPressed: () {
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                            builder: (_) => const HomePage(),
+                          ),
+                        );
                         print(loginEmail + " " + loginPassword);
                       }),
                   SizedBox(
