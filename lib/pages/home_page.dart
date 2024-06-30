@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:google_fonts/google_fonts.dart";
+import 'package:kinetik/components/featured_exercises_card.dart';
 import 'package:kinetik/constants.dart';
 
 import '../components/body_category_card.dart';
@@ -49,13 +50,16 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Hello Kobbie",
+                      "Hello $name",
                       style: GoogleFonts.openSans(
                           color: Colors.white, fontSize: 20),
                     ),
                     IconButton(
                       onPressed: this.onPressed,
-                      icon: Icon(Icons.settings),
+                      icon: Icon(
+                        Icons.settings,
+                        size: 30,
+                      ),
                     )
                   ],
                 ),
@@ -85,25 +89,18 @@ class _HomePageState extends State<HomePage> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Constants.greyColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          height: 230,
-                          width: 190,
-                          child: Column(
-                            children: [
-                              Text(
-                                "Bench Press",
-                                style: GoogleFonts.montserrat(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600),
-                              )
-                            ],
-                          ),
-                        ),
+                        FeaturedExercisesCard(
+                            assetLink: "images/chest.jpg",
+                            exercise: "Bench Press",
+                            exerciseDescription: "Lorem ipsum fontasum "),
+                        FeaturedExercisesCard(
+                            assetLink: "images/chest.jpg",
+                            exercise: "Bench Press",
+                            exerciseDescription: "Lorem ipsum fontasum "),
+                        FeaturedExercisesCard(
+                            assetLink: "images/chest.jpg",
+                            exercise: "Bench Press",
+                            exerciseDescription: "Lorem ipsum fontasum "),
                       ],
                     ),
                   ),
