@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -11,29 +12,48 @@ class Categories extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Legs'),
+        title: const Text(
+          'Legs',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         scrolledUnderElevation: scrolledUnderElevation,
+        backgroundColor: const Color.fromRGBO(13, 11, 11, 1), 
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
+          color: Colors.white,
           onPressed: () {
             Navigator.pop(context);
           },
         ),
       ),
-      body:  Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      body:Stack(
           children: <Widget>[
-            Card(
+             Container(
+               decoration: const BoxDecoration(
+                color: Color.fromRGBO(13, 11, 11, 1),
+              ),
+            ),
+
+           Padding(padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: <Widget>[
+Card(
               child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
               const ListTile(
                 leading: Icon(Icons.fitness_center,
                 size: 40.0),
-                title: Text('Straight Leg Press Stance'),
-                subtitle: Text('~ 15 minutes'),
+                title: Text('Straight Leg Press Stance',
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),),
+                subtitle: Text('~ 15 minutes',
+                style: TextStyle(
+                  fontSize: 15.0,
+                ),),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -58,8 +78,14 @@ class Categories extends StatelessWidget {
               const ListTile(
                 leading: Icon(Icons.fitness_center,
                 size: 40.0),
-                title: Text('Squats'),
-                subtitle: Text('~ 15 minutes'),
+                title: Text('Squats',
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),),
+                subtitle: Text('~ 15 minutes',
+                style: TextStyle(
+                  fontSize: 15.0,
+                ),),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -84,8 +110,14 @@ class Categories extends StatelessWidget {
               const ListTile(
                 leading: Icon(Icons.fitness_center,
                 size: 40.0),
-                title: Text('Hip Abductors'),
-                subtitle: Text('~ 15 minutes'),
+                title: Text('Hip Abductors',
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),),
+                subtitle: Text('~ 15 minutes',
+                style: TextStyle(
+                  fontSize: 15.0,
+                ),),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -110,8 +142,14 @@ class Categories extends StatelessWidget {
               const ListTile(
                 leading: Icon(Icons.fitness_center,
                 size: 40.0),
-                title: Text('Calf raises'),
-                subtitle: Text('~ 15 minutes'),
+               title: Text('Calf Raises',
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),),
+                subtitle: Text('~ 15 minutes',
+                style: TextStyle(
+                  fontSize: 15.0,
+                ),),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -136,8 +174,15 @@ class Categories extends StatelessWidget {
               const ListTile(
                 leading: Icon(Icons.fitness_center,
                 size: 40.0),
-                title: Text('Hip Adductors'),
-                subtitle: Text('~ 15 minutes'),
+                title: Text('Hip Adductors',
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),),
+                subtitle: Text('~ 15 minutes',
+                style: TextStyle(
+                  fontSize: 15.0,
+                ),),
+                
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -155,12 +200,32 @@ class Categories extends StatelessWidget {
         ),
               
             ),
+                ],
+              )
+            )
+            
           ],
-        ),
+        // ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        child: Container(height: 50.0),
+       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color.fromRGBO(248, 248, 250, 1),
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
+        ],
+        // currentIndex: _selectedIndex,
+        selectedItemColor: Color.fromARGB(255, 60, 43, 123),
+        // onTap: _onItemTapped,
       ),
     );
   }
