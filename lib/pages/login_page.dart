@@ -8,6 +8,7 @@ import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+  static final String id = "/login";
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -30,6 +31,9 @@ class _LoginPageState extends State<LoginPage> {
         body: SingleChildScrollView(
           child: Container(
             width: double.infinity,
+            decoration: BoxDecoration(
+              color: Color(0xFF17181C),
+            ),
             child: Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 60, vertical: 30.0),
@@ -122,34 +126,31 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   NormalAuthButton(
                       name: "Sign In",
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(
-                            builder: (_) => const HomePage(),
-                          ),
-                        );
+                        Navigator.pushNamed(context, HomePage.id);
+
                         print(loginEmail + " " + loginPassword);
                       }),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
-                  Divider(
+                  const Divider(
                     color: Colors.white,
                     height: 8,
                     thickness: 1,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   GoogleAuthButton(
                     buttonName: "Login With Google",
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Padding(
@@ -175,9 +176,6 @@ class _LoginPageState extends State<LoginPage> {
                   )
                 ],
               ),
-            ),
-            decoration: BoxDecoration(
-              color: Color(0xFF17181C),
             ),
           ),
         ),

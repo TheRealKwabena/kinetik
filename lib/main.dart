@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kinetik/pages/login_page.dart';
+import 'package:kinetik/pages/registration_page.dart';
 import 'package:kinetik/pages/splash_screen.dart';
 import 'pages/home_page.dart';
 
@@ -13,7 +15,13 @@ class KineTikApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      initialRoute: SplashScreen.id,
+      routes: {
+        SplashScreen.id: (context) => const SplashScreen(),
+        RegistrationPage.id: (context) => const RegistrationPage(),
+        LoginPage.id: (context) => const LoginPage(),
+        HomePage.id: (context) => const HomePage(),
+      },
     );
   }
 }

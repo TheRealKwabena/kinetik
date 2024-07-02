@@ -7,6 +7,7 @@ import 'login_page.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});
+  static final String id = "/register";
 
   @override
   State<RegistrationPage> createState() => _RegistrationPageState();
@@ -30,6 +31,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
         body: SingleChildScrollView(
           child: Container(
             width: double.infinity,
+            decoration: const BoxDecoration(
+              color: Color(0xFF17181C),
+            ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 20),
               child: Column(
@@ -37,12 +41,12 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   Padding(
                     padding: const EdgeInsets.only(top: 70),
                     child: Container(
-                      child: Image.asset('images/kinetiklogo.jpg'),
                       height: 130,
                       width: 130,
+                      child: Image.asset('images/kinetiklogo.jpg'),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   Text(
@@ -50,7 +54,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     style: GoogleFonts.openSans(
                         color: Colors.white, fontSize: 20.0),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   Container(
@@ -85,7 +89,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   Container(
@@ -116,7 +120,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   Container(
@@ -158,39 +162,35 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   NormalAuthButton(
                     name: "Register",
                     onPressed: () {
-                      print(username + " " + userEmail + " " + userPassword);
+                      print("$username $userEmail $userPassword");
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Divider(
+                  const Divider(
                     color: Colors.white,
                     height: 8,
                     thickness: 1,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   GoogleAuthButton(
                     buttonName: "Continue With Google",
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (_) => const LoginPage(),
-                        ),
-                      );
+                      Navigator.pushNamed(context, LoginPage.id);
                     },
                     child: Text(
                       "Already have an account? Click here",
@@ -203,9 +203,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   )
                 ],
               ),
-            ),
-            decoration: BoxDecoration(
-              color: Color(0xFF17181C),
             ),
           ),
         ),

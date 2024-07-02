@@ -5,6 +5,7 @@ import 'package:kinetik/pages/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+  static final String id = "/splash";
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -18,11 +19,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (_) => const LoginPage(),
-        ),
-      );
+      Navigator.pushNamed(context, LoginPage.id);
     });
   }
 

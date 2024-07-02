@@ -8,7 +8,7 @@ import '../components/body_category_card.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
-  static final id = "/homepage";
+  static final id = "/home";
 
   @override
   State<HomePage> createState() => _HomePageState();
