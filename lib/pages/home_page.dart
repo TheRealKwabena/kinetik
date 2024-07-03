@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import "package:google_fonts/google_fonts.dart";
 import 'package:kinetik/components/featured_exercises_card.dart';
 import 'package:kinetik/constants.dart';
-
+import '../pages/categories.dart';
 import '../components/body_category_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -123,11 +123,12 @@ class _HomePageState extends State<HomePage> {
                           BodyCategoryCard(
                             assetLink: "images/legs.jpg",
                             bodyPart: "Legs",
+                            routeId: Categories.id,
                           ),
                           BodyCategoryCard(
-                            assetLink: "images/arms.jpg",
-                            bodyPart: "Arms",
-                          )
+                              assetLink: "images/arms.jpg",
+                              bodyPart: "Arms",
+                              routeId: Categories.id)
                         ],
                       ),
                     ),
@@ -139,10 +140,12 @@ class _HomePageState extends State<HomePage> {
                           BodyCategoryCard(
                             assetLink: "images/chest.jpg",
                             bodyPart: "Chest",
+                            routeId: Categories.id,
                           ),
                           BodyCategoryCard(
                             assetLink: "images/cardio.jpg",
                             bodyPart: "Cardio",
+                            routeId: Categories.id,
                           )
                         ],
                       ),

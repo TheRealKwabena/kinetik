@@ -19,15 +19,14 @@ class KineTikApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       initialRoute: SplashScreen.id,
       routes: {
         SplashScreen.id: (context) => const SplashScreen(),
         RegistrationPage.id: (context) => const RegistrationPage(),
         LoginPage.id: (context) => const LoginPage(),
         HomePage.id: (context) => const HomePage(),
+        Categories.id: (context) => const Categories()
       },
-
     );
   }
 }
