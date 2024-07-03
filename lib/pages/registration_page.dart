@@ -28,14 +28,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              color: Color(0xFF17181C),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 20),
+        body: Container(
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            color: Color(0xFF17181C),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 20),
+            child: Expanded(
               child: Column(
                 children: [
                   Padding(

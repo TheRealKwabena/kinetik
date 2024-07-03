@@ -25,131 +25,133 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Constants.mainBackgroundColor,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: 100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromRGBO(0, 0, 0, 0.25),
+                      blurRadius: 4,
+                      offset: Offset(0.0, 4.0),
+                    )
+                  ],
+                  color: Constants.darkShadeBlue,
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.25),
-                    blurRadius: 4,
-                    offset: Offset(0.0, 4.0),
-                  )
-                ],
-                color: Constants.darkShadeBlue,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Hello $name",
+                        style: GoogleFonts.openSans(
+                            color: Colors.white, fontSize: 20),
+                      ),
+                      IconButton(
+                        onPressed: this.onPressed,
+                        icon: Icon(
+                          Icons.settings,
+                          size: 30,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Hello $name",
+                      "Featured Exercises",
                       style: GoogleFonts.openSans(
-                          color: Colors.white, fontSize: 20),
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w300),
                     ),
-                    IconButton(
-                      onPressed: this.onPressed,
-                      icon: Icon(
-                        Icons.settings,
-                        size: 30,
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 250,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          FeaturedExercisesCard(
+                              assetLink: "images/chest.jpg",
+                              exercise: "Bench Press",
+                              exerciseDescription: "Lorem ipsum fontasum "),
+                          FeaturedExercisesCard(
+                              assetLink: "images/chest.jpg",
+                              exercise: "Bench Press",
+                              exerciseDescription: "Lorem ipsum fontasum "),
+                          FeaturedExercisesCard(
+                              assetLink: "images/chest.jpg",
+                              exercise: "Bench Press",
+                              exerciseDescription: "Lorem ipsum fontasum "),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Text(
+                      "Categories",
+                      style: GoogleFonts.openSans(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w300),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          BodyCategoryCard(
+                            assetLink: "images/legs.jpg",
+                            bodyPart: "Legs",
+                          ),
+                          BodyCategoryCard(
+                            assetLink: "images/arms.jpg",
+                            bodyPart: "Arms",
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          BodyCategoryCard(
+                            assetLink: "images/chest.jpg",
+                            bodyPart: "Chest",
+                          ),
+                          BodyCategoryCard(
+                            assetLink: "images/cardio.jpg",
+                            bodyPart: "Cardio",
+                          )
+                        ],
                       ),
                     )
                   ],
                 ),
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Featured Exercises",
-                    style: GoogleFonts.openSans(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w300),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    width: double.infinity,
-                    height: 250,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        FeaturedExercisesCard(
-                            assetLink: "images/chest.jpg",
-                            exercise: "Bench Press",
-                            exerciseDescription: "Lorem ipsum fontasum "),
-                        FeaturedExercisesCard(
-                            assetLink: "images/chest.jpg",
-                            exercise: "Bench Press",
-                            exerciseDescription: "Lorem ipsum fontasum "),
-                        FeaturedExercisesCard(
-                            assetLink: "images/chest.jpg",
-                            exercise: "Bench Press",
-                            exerciseDescription: "Lorem ipsum fontasum "),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  Text(
-                    "Categories",
-                    style: GoogleFonts.openSans(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w300),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        BodyCategoryCard(
-                          assetLink: "images/legs.jpg",
-                          bodyPart: "Legs",
-                        ),
-                        BodyCategoryCard(
-                          assetLink: "images/arms.jpg",
-                          bodyPart: "Arms",
-                        )
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        BodyCategoryCard(
-                          assetLink: "images/chest.jpg",
-                          bodyPart: "Chest",
-                        ),
-                        BodyCategoryCard(
-                          assetLink: "images/cardio.jpg",
-                          bodyPart: "Cardio",
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
