@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:kinetik/pages/exercise_page.dart';
 
 class Categories extends StatefulWidget {
   const Categories({super.key});
@@ -105,6 +106,7 @@ class _CategoriesState extends State<Categories> {
                             TextButton(
                               child: const Text('Press to Select'),
                               onPressed: () {
+                                Navigator.pushNamed(context, ExercisePage.id);
                                 /* ... */
                               },
                             ),

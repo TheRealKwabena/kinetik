@@ -38,7 +38,6 @@ packages:
     description:
       name: collection
       sha256: ee67cb0715911d28db6bf4af1026078bd6f0128b07a5f66fb2ed94ec6783c09a
-
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
@@ -50,7 +49,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
-
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -59,6 +57,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  custom_timer:
+    dependency: "direct main"
+    description:
+      name: custom_timer
+      sha256: "65af2d6a3f6f232b224ad1dd06dbab9f8473be69800a32934cbd1e6d90276348"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.3"
   fake_async:
     dependency: transitive
     description:
@@ -93,7 +99,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-
   font_awesome_flutter:
     dependency: "direct main"
     description:
@@ -149,7 +154,6 @@ packages:
       sha256: "6ba465d5d76e67ddf503e1161d1f4a6bc42306f9d66ca1e8f079a47290fb06d3"
       url: "https://pub.dev"
     source: hosted
-
     version: "3.0.1"
   lints:
     dependency: transitive
@@ -188,7 +192,6 @@ packages:
     description:
       name: path
       sha256: "087ce49c3f0dc39180befefc60fdb4acd8f8620e5682fe2476afd0b3688bb4af"
-
       url: "https://pub.dev"
     source: hosted
     version: "1.9.0"
@@ -256,7 +259,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.8"
-
   sky_engine:
     dependency: transitive
     description: flutter
@@ -307,7 +309,6 @@ packages:
     description:
       name: test_api
       sha256: "9955ae474176f7ac8ee4e989dadfb411a58c30415bcfb648fa04b2b8a03afa7f"
-
       url: "https://pub.dev"
     source: hosted
     version: "0.7.0"
@@ -319,7 +320,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.2"
-
   vector_math:
     dependency: transitive
     description:
@@ -336,7 +336,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "14.2.1"
-
   web:
     dependency: transitive
     description:
