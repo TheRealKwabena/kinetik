@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:kinetik/pages/categories.dart';
+import 'package:kinetik/pages/exercise_page.dart';
 
 import 'package:kinetik/pages/login_page.dart';
 import 'package:kinetik/pages/registration_page.dart';
@@ -25,7 +26,8 @@ class KineTikApp extends StatelessWidget {
         RegistrationPage.id: (context) => const RegistrationPage(),
         LoginPage.id: (context) => const LoginPage(),
         HomePage.id: (context) => const HomePage(),
-        Categories.id: (context) => const Categories()
+        Categories.id: (context) => const Categories(),
+        ExercisePage.id: (context) => const ExercisePage()
       },
     );
   }
