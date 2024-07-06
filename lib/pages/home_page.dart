@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import "package:google_fonts/google_fonts.dart";
 import 'package:kinetik/components/featured_exercises_card.dart';
 import 'package:kinetik/constants.dart';
+import 'package:kinetik/pages/settings_page.dart';
 import '../pages/categories.dart';
 import '../components/body_category_card.dart';
 
@@ -17,6 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   String name = "Kobbie";
   void onPressed() {
+    Navigator.pushNamed(context, SettingsPage.id);
     print("Navigate to Settings");
   }
 

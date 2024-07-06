@@ -5,6 +5,7 @@ import 'package:kinetik/pages/exercise_page.dart';
 
 import 'package:kinetik/pages/login_page.dart';
 import 'package:kinetik/pages/registration_page.dart';
+import 'package:kinetik/pages/settings_page.dart';
 import 'package:kinetik/pages/splash_screen.dart';
 
 import 'pages/home_page.dart';
@@ -27,7 +28,8 @@ class KineTikApp extends StatelessWidget {
         LoginPage.id: (context) => const LoginPage(),
         HomePage.id: (context) => const HomePage(),
         Categories.id: (context) => const Categories(),
-        ExercisePage.id: (context) => const ExercisePage()
+        ExercisePage.id: (context) => const ExercisePage(),
+        SettingsPage.id: (context) => const SettingsPage()
       },
     );
   }
