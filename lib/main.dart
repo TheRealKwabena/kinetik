@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:kinetik/pages/categories.dart';
 import 'package:kinetik/pages/exercise_page.dart';
@@ -22,6 +23,9 @@ class KineTikApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: SplashScreen.id,
+      theme: ThemeData(
+        textTheme: GoogleFonts.openSansTextTheme(Theme.of(context).textTheme),
+      ),
       routes: {
         SplashScreen.id: (context) => const SplashScreen(),
         RegistrationPage.id: (context) => const RegistrationPage(),

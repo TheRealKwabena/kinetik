@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:kinetik/pages/exercise_page.dart';
+import 'package:kinetik/constants.dart';
 
 class Categories extends StatefulWidget {
   const Categories({super.key});
@@ -25,8 +26,9 @@ class _CategoriesState extends State<Categories> {
             color: Colors.white,
           ),
         ),
+        elevation: 5,
         scrolledUnderElevation: scrolledUnderElevation,
-        backgroundColor: const Color.fromRGBO(13, 11, 11, 1),
+        backgroundColor: Constants.darkShadeBlue,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           color: Colors.white,
@@ -39,7 +41,7 @@ class _CategoriesState extends State<Categories> {
         children: <Widget>[
           Container(
             decoration: const BoxDecoration(
-              color: Color.fromRGBO(13, 11, 11, 1),
+              color: Constants.mainBackgroundColor,
             ),
           ),
           Padding(
@@ -227,7 +229,7 @@ class _CategoriesState extends State<Categories> {
         ],
         // ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      /*bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color.fromRGBO(248, 248, 250, 1),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -247,6 +249,8 @@ class _CategoriesState extends State<Categories> {
         selectedItemColor: Color.fromARGB(255, 60, 43, 123),
         // onTap: _onItemTapped,
       ),
+
+       */
     );
   }
 }
