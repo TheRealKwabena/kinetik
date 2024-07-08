@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "611637578818",
+    "project_id": "kinetik-22f1e",
+    "storage_bucket": "kinetik-22f1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611637578818:android:0c4674daecd16c9b7ff1db",
+        "android_client_info": {
+          "package_name": "com.example.kinetik"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsossRa3aRGyc3cZWteWaHLT4pQru8zv8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
