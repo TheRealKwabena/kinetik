@@ -8,11 +8,15 @@ import 'package:kinetik/pages/login_page.dart';
 import 'package:kinetik/pages/registration_page.dart';
 import 'package:kinetik/pages/settings_page.dart';
 import 'package:kinetik/pages/splash_screen.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'pages/home_page.dart';
 
-void main() {
+Future<void> main() async {
   runApp(const KineTikApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
 
 class KineTikApp extends StatelessWidget {
