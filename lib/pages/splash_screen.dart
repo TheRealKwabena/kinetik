@@ -1,7 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kinetik/auth/auth_provider.dart';
+import 'package:kinetik/pages/auth_wrapper.dart';
 import 'package:kinetik/pages/home_page.dart';
 import 'package:kinetik/pages/login_page.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushNamed(context, LoginPage.id);
+      Navigator.pushNamed(context, AuthWrapper.id);
     });
   }
 

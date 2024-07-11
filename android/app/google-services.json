@@ -12,7 +12,12 @@
           "package_name": "com.example.kinetik"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "611637578818-i508hs7nnlij8nm8smnalgpl9hgm6e2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDsossRa3aRGyc3cZWteWaHLT4pQru8zv8"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611637578818-i508hs7nnlij8nm8smnalgpl9hgm6e2n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "611637578818-k2p2ievabnnd9bemhnvecasgdqqhnbqn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.kinetik"
+              }
+            }
+          ]
         }
       }
     }

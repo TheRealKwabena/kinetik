@@ -63,6 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '611637578818',
     projectId: 'kinetik-22f1e',
     storageBucket: 'kinetik-22f1e.appspot.com',
+    iosClientId: '611637578818-k2p2ievabnnd9bemhnvecasgdqqhnbqn.apps.googleusercontent.com',
     iosBundleId: 'com.example.kinetik',
   );
+
 }
